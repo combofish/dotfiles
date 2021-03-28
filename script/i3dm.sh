@@ -4,7 +4,7 @@
 # Filename: i3dm.sh
 
 config_pre_i3(){
-    deps=(rofi conky xscreensaver feh shutter rofi konsole i3status i3blocks xcompmgr)
+    deps=(rofi conky xscreensaver feh rofi konsole i3status i3blocks xcompmgr kde-standard) #shutter
     sudo apt-get install ${deps[@]}
 }
 
@@ -36,5 +36,5 @@ config_i3dm(){
     config_i3
 }
 
-# config_i3dm # Move to ./use.sh 
+config_i3dm # Move to ./use.sh 
 

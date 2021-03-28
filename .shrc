@@ -9,13 +9,34 @@ export PATH=$PATH:$GOPATH/bin
 export DOTFILES=$HOME/GitProjects/dotfiles
 export PATH=$PATH:$DOTFILES/bin:$DOTFILES/script
 
+# emacs 27 
+export PATH=$PATH:/snap/bin
+
+# android studio
+export PATH=$PATH:$HOME/Downloads/android-studio/bin
+
 # conda
-# source /home/larry/anaconda3/etc/profile.d/conda.sh
-source /home/larry/miniconda3/etc/profile.d/conda.sh    
+source /home/larry/anaconda3/etc/profile.d/conda.sh
+# source /home/larry/miniconda3/etc/profile.d/conda.sh    
 
 # ros
+source /opt/ros/noetic/setup.zsh
 # source /opt/ros/ /opt/ros/melodic/setup.zsh
-#source ~/workspace/catkin_ws/devel/setup.zsh
+# source ~/workspace/catkin_ws/devel/setup.zsh
+
+# proxy
+source $DOTFILES/bin/teminal_proxy.sh
+
+# IBUS
+# export GTK_IM_MODULE=ibus
+# export XMODIFIERS=@im=ibus
+# export QT_IM_MODULE=ibus
+
+# fcitx
+export GTK_IM_MODULE=fcitx
+export XMODIFIERS="@im=fcitx"
+export QT_IM_MODULE=fcitx
+
 
 ### alias
 alias lm="ls -la | more"

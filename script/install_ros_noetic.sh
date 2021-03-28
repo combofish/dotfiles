@@ -3,6 +3,12 @@
 # email:combofish49@gmail.com 
 # Filename: software.sh
 
+# sudo apt install ros-noetic-ros-base
+# sudo apt install ros-noetic-desktop
+# sudo apt install ros-noetic-desktop-full
+# sudo apt install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential
+# sudo rosdep init
+# rosdep update 
 
 config_setup_ros(){
     # 

@@ -5,6 +5,6 @@
 # software: useful tools
 config_tools(){
     # ccat
-    go get -u github.com/jingweno/ccat
+    go get -u github.com/owenthereal/ccat
     echo $(ccat -v)
 }
