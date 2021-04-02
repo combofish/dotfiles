@@ -107,3 +107,19 @@ FLUSH PRIVILEGES;
 
 systemctl enable mysql
 
+
+sudo add-apt-repository ppa:christian-boxdoerfer/fsearch-daily
+sudo apt-get update
+sudo apt install fsearch-trunk
+
+sudo apt-get install fzf
+
+sudo apt-get install tomcat9
+t9 sudo systemctl disable tomcat9 
+Removed /etc/systemd/system/multi-user.target.wants/tomcat9.service.
+➜  tomcat9 sudo systemctl stop tomcat9   
+
+sudo apt-get install openjdk-14-jdk
+
+
+octave

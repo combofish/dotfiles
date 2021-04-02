@@ -15,6 +15,11 @@ export PATH=$PATH:/snap/bin
 # android studio
 export PATH=$PATH:$HOME/Downloads/android-studio/bin
 
+# JAVA
+export JAVA_HOME=/usr/lib/jvm/java-14-openjdk-amd64
+export PATH=$JAVA_HOME/bin:$PATH
+# export CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar 
+
 # conda
 source /home/larry/anaconda3/etc/profile.d/conda.sh
 # source /home/larry/miniconda3/etc/profile.d/conda.sh    
