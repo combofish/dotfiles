@@ -12,8 +12,12 @@ export PATH=$PATH:$DOTFILES/bin:$DOTFILES/script
 # emacs 27 
 export PATH=$PATH:/snap/bin
 
-# android studio
+# Android Studio
 export PATH=$PATH:$HOME/Downloads/android-studio/bin
+
+# Maven
+export MAVEN_HOME=/usr/share/maven
+export PATH=$MAVEN_HOME/bin:$PATH
 
 # JAVA
 export JAVA_HOME=/usr/lib/jvm/java-14-openjdk-amd64

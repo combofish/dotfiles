@@ -123,3 +123,5 @@ sudo apt-get install openjdk-14-jdk
 
 
 octave
+maven
+
