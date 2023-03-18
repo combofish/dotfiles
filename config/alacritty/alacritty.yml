@@ -1,0 +1,54 @@
+window:
+  decorations: full
+  # dimensions:
+  #   columns: 180
+  #   lines: 34
+  # 内填充
+  # padding:
+  #   x: 0
+  #   y: 0
+
+  # 透明度：0 透明，1 不透明
+  opacity: 0.8
+
+# 设置字体
+font:
+  normal:
+    family: monospace
+  size: 11.0
+  offset:
+   x: 1
+   y: -3
+  glyph_offset:
+   x: 0
+   y: -2
+  
+  # normal:
+  #   family: "JetBrainsMono Nerd Font"
+  #   style: Regular
+  # bold:
+  #   family: "Hack Nerd Font"
+  #   style: Bold
+  # italic:
+  #   family: "Hack Nerd Font"
+  #   style: Italic
+  # bold_italic:
+  #   family: "Hack Nerd Font"
+  #   style: Bold Italic
+
+  # # 字大小
+  # size: 9
+
+# 如果为‘true’，则使用亮色变体绘制粗体文本。
+draw_bold_text_with_bright_colors: true
+# env:
+#   WINIT_X11_SCALE_FACTOR: "1.0"
+
+shell:
+  program: /usr/bin/zsh
+  args:
+    - --login
+    - -c
+    - "tmux new-session -A -D -s main"
+
+# 

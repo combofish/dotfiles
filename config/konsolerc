@@ -1,0 +1,19 @@
+[Appearance]
+Font=Hack,12,-1,7,50,0,0,0,0,0
+
+[Desktop Entry]
+DefaultProfile=Profile 1.profile
+
+[Favorite Profiles]
+Favorites=combofish.profile
+
+[KonsoleWindow]
+ShowMenuBarByDefault=false
+
+[MainWindow]
+Height 768=728
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAAAABVYAAAMAAAAABAAAAAQAAAAIAAAACPwAAAAA
+ToolBarsMovable=Disabled
+Width 1366=1366
+Window-Maximized 768x1366=true
