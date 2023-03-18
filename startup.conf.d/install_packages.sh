@@ -39,7 +39,7 @@ sudo apt-get install -y golang python3 lua5.3 rustc \
 sudo snap install --classic code
 
 # install emacs
-snap install --beta --classic emacs
+sudo snap install --beta --classic emacs
 
 # config font
 sudo apt-get install fonts-font-awesome && fc-list >/dev/null && sudo fc-cache -f -v >/dev/null
