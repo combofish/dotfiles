@@ -7,7 +7,7 @@ export PATH=$PATH:$GOPATH/bin
 
 # export DOTFILES=$HOME/Documents/dotfiles
 export DOTFILES=$HOME/GitProjects/dotfiles
-export PATH=$PATH:$DOTFILES/bin:$DOTFILES/script
+export PATH=$PATH:$DOTFILES/bin
 
 export PATH=$PATH:$HOME/.local/bin
 
@@ -18,7 +18,7 @@ export PATH=$PATH:$HOME/.emacs.d/bin
 export PATH=/snap/bin:$PATH
 
 # Android Studio
-export PATH=$PATH:$HOME/Downloads/android-studio/bin
+# export PATH=$PATH:$HOME/Downloads/android-studio/bin
 
 # CUDA
 export PATH=/usr/local/cuda-11.4//bin:$PATH
@@ -44,12 +44,12 @@ source $HOME/anaconda3/etc/profile.d/conda.sh
 # source /home/larry/miniconda3/etc/profile.d/conda.sh    
 
 # ros
-source /opt/ros/noetic/setup.zsh
+# source /opt/ros/noetic/setup.zsh
 # source /opt/ros/ /opt/ros/melodic/setup.zsh
 # source ~/workspace/catkin_ws/devel/setup.zsh
 
 # proxy
-source $DOTFILES/bin/teminal_proxy.sh
+# source $DOTFILES/bin/teminal_proxy.sh
 
 # IBUS
 # export GTK_IM_MODULE=ibus
