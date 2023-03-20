@@ -6,13 +6,13 @@ set -x
 
 # install
 sudo apt-get install -y golang python3 lua5.3 rustc \
-  npm maven gradle mysql-server octave \
-  cmake cmake-qt-gui llvm clang clangd lldb flake8 ninja-build ntfs-3g clangd-12 \
-  thunar okular ranger htop glances kazam gimp whowatch ncdu cloc net-tools adb tree neofetch \
-  \
-  vim zsh rxvt-unicode ffmpeg flameshot samba cifs-utils fd-find ripgrep \
-  fcitx-config-gtk fonts-wqy-microhei qtcreator \
-  tesseract-ocr tesseract-ocr-eng libtesseract-dev arduino android-sdk # macs \
+     npm maven gradle mysql-server octave \
+     cmake cmake-qt-gui llvm clang clangd lldb flake8 ninja-build ntfs-3g clangd-12 \
+     thunar okular ranger htop glances kazam gimp whowatch ncdu cloc net-tools adb tree neofetch \
+     \
+     vim zsh rxvt-unicode ffmpeg flameshot samba cifs-utils fd-find ripgrep \
+     fcitx-config-gtk fonts-wqy-microhei qtcreator \
+     tesseract-ocr tesseract-ocr-eng libtesseract-dev arduino android-sdk # macs \
 
 # kvm software
 # sudo apt-get install -y qemu-kvm qemu virt-manager virt-viewer libvirt-daemon-system libvirt-clients
@@ -52,5 +52,13 @@ sudo snap install clion --classic
 
 # update
 sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade && sudo apt autoremove && sudo snap refresh
+
+# input
+sudo apt remove ibus
+
+sudo apt install fcitx5 \
+     fcitx5-chinese-addons \
+     fcitx5-frontend-gtk4 fcitx5-frontend-gtk3 fcitx5-frontend-gtk2 \
+     fcitx5-frontend-qt5
 
 set +x
