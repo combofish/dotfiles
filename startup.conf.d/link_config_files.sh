@@ -11,7 +11,7 @@ backup_and_ln() {
     timestamp=$(date +"%Y%m%d_%H%M%S")
     backup="$dest.$timestamp"
     echo "备份文件 $dest 为 $backup"
-    cp "$dest" "$backup"
+    mv "$dest" "$backup"
   fi
 
   # 复制文件到目标位置
