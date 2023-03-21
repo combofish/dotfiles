@@ -15,7 +15,7 @@ backup_and_ln() {
   fi
 
   # 复制文件到目标位置
-  echo "复制文件 $file 到 $dest"
+  echo "链接文件 $file 到 $dest"
   ln "$file" "$dest"
 }
 
