@@ -27,7 +27,7 @@ dir_or_execute "$repo_zsh" "git clone git@github.com:ohmyzsh/ohmyzsh.git $repo_z
 dir_or_execute "$repo_zsh_sugg" "git clone git@github.com:zsh-users/zsh-autosuggestions.git $repo_zsh_sugg"
 
 
-if [ "$SHELL" = "/bin/zsh" ]; then
+if [ "$SHELL" = "/usr/bin/zsh" ]; then
   echo "Current shell is zsh."
 else
   echo "Current shell is not zsh."

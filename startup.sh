@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# change work dir
+cd "$HOME/GitProjects/dotfiles/"
+
 # 定义要执行的目录
 directory="./startup.conf.d/"
 
