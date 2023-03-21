@@ -8,7 +8,7 @@ import os
 import argparse
 import sys
 
-max_run_time = 5
+max_run_time = 60
 time_prefix = f"timeout -s 9 {max_run_time}s"
 CXX_prefix = "clang++ -std=c++17 -fsanitize=address -Wall -Werror -Wreturn-type -fno-omit-frame-pointer" # -Wc++17-extensions
 
