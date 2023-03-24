@@ -1,13 +1,13 @@
 #!/bin/bash
 
 # change work dir
-cd "$HOME/GitProjects/dotfiles/"
+cd "$HOME/GitProjects/dotfiles/" || exit
 
 # 定义要执行的目录
 directory="./startup.conf.d/"
 
-# 打开调试模式
-set -x
+## 打开调试模式
+#set -x
 
 # 遍历目录中的所有文件
 for file in "${directory}"/*; do
@@ -23,12 +23,12 @@ git config --global user.email "combofish@163.com"
 git config --global user.name "combofish"
 
 # user config
-sudo usermod -aG dialout "${USER}" && sudo usermod -a -G dialout "$USER"
+sudo usermod -aG dialout "$USER" && sudo usermod -a -G dialout "$USER"
 
 # auto remove
 sudo apt autoremove -y
 
-# 关闭调试模式
-set +x
+## 关闭调试模式
+#set +x
 
 echo "done!"
