@@ -16,7 +16,7 @@ repo_code="$repos_dir/chips-get"
 
 repo_zsh="$repos_dir/ohmyzsh"
 repo_zsh_sugg="$repos_dir/ohmyzsh/plugins/zsh-autosuggestions"
-
+repo_zsh_high="$repos_dir/ohmyzsh/plugins/zsh-syntax-highlighting"
 
 dir_or_execute "$repo_blog" "git clone git@github.com:combofish/combofish.github.io.git $repo_blog"
 dir_or_execute "$repo_notes" "git clone git@github.com:combofish/chips-get.git $repo_notes"
@@ -25,7 +25,7 @@ dir_or_execute "$repo_code" "git clone git@github.com:combofish/carve-in-mind.gi
 
 dir_or_execute "$repo_zsh" "git clone git@github.com:ohmyzsh/ohmyzsh.git $repo_zsh"
 dir_or_execute "$repo_zsh_sugg" "git clone git@github.com:zsh-users/zsh-autosuggestions.git $repo_zsh_sugg"
-
+dir_or_execute "$repo_zsh_high" "git clone git@github.com:zsh-users/zsh-syntax-highlighting.git $repo_zsh_high"
 
 if [ "$SHELL" = "/usr/bin/zsh" ]; then
   echo "Current shell is zsh."
