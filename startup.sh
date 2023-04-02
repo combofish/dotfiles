@@ -9,6 +9,9 @@ directory="./startup.conf.d/"
 ## 打开调试模式
 #set -x
 
+# update first
+sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade
+
 # 遍历目录中的所有文件
 for file in "${directory}"/*; do
   # 检查文件是否是可执行文件

@@ -35,8 +35,6 @@ sudo apt-get install -y golang python3 lua5.3 rustc \
 # go install github.com/owenthereal/ccat@latest
 
 # config font
-# sudo dpkg -s fonts-font-awesome
-# if [ ! "$0" ]; then
 if sudo dpkg -s fonts-font-awesome; then
   sudo apt-get install fonts-font-awesome && fc-list >/dev/null && sudo fc-cache -f -v >/dev/null
 fi
@@ -47,21 +45,5 @@ sudo apt install fcitx5 fcitx5-chinese-addons fcitx5-frontend-qt5
 
 # 不要用脚本自动安装带有安装交互的软件包
 # kubuntu-desktop xfce4
-
-# install clion
-sudo snap install clion --classic
-
-# install vscode
-sudo snap install code --classic
-
-# install emacs
-sudo snap install --beta --classic emacs
-
-# install pycharm
-sudo snap install pycharm-community --classic
-sudo snap install pycharm-professional --classic
-
-# update
-sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade && sudo apt autoremove && sudo snap refresh
 
 set +x
