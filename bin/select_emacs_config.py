@@ -30,11 +30,11 @@ def main(opt):
     # ic(opt.name)
     dirs = [base_path / d for d in os.listdir(base_path)]
 
-    if (opt.list):
+    if opt.list:
         show(dirs)
         sys.exit(0)
 
-    if (opt.select_idx != -1):
+    if opt.select_idx != -1:
         if not opt.select_idx < len(dirs):
             raise IndexError("Valid select_idx, must in [0, {}]".format(len(dirs) - 1))
 

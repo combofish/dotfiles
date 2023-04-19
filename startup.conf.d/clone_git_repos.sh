@@ -27,11 +27,4 @@ dir_or_execute "$repo_zsh" "git clone git@github.com:ohmyzsh/ohmyzsh.git $repo_z
 dir_or_execute "$repo_zsh_sugg" "git clone git@github.com:zsh-users/zsh-autosuggestions.git $repo_zsh_sugg"
 dir_or_execute "$repo_zsh_high" "git clone git@github.com:zsh-users/zsh-syntax-highlighting.git $repo_zsh_high"
 
-if [ "$SHELL" = "/usr/bin/zsh" ]; then
-  echo "Current shell is zsh."
-else
-  echo "Current shell is not zsh."
-  chsh -s "$(which zsh)" # 切换到zsh
-fi
-
 set +x

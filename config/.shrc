@@ -17,6 +17,10 @@ export PATH=$PATH:$HOME/.emacs.d/bin
 # snap
 export PATH=/snap/bin:$PATH
 
+# Install Ruby Gems to ~/gems
+export GEM_HOME="$HOME/gems"
+export PATH="$PATH:$HOME/gems/bin"
+
 # Android Studio
 # export PATH=$PATH:$HOME/Downloads/android-studio/bin
 
