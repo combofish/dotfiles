@@ -25,12 +25,12 @@ def get_args_parser():
 def main(config):
     dirs = os.path.join(work_dir, scripts_dir)
 
-    # for file in os.listdir(dirs):
-    #     if file.endswith('.sh') or file.endswith('.py'):
-    #         file_path = os.path.join(dirs, file)
-    #         if os.access(file_path, os.X_OK):
-    #             print(file)
-    #             subprocess.run(file_path, shell=True)
+    for file in os.listdir(dirs):
+        if file.endswith('.sh') or file.endswith('.py'):
+            file_path = os.path.join(dirs, file)
+            if os.access(file_path, os.X_OK):
+                print(file)
+                subprocess.run(file_path, shell=True)
 
     print(f"config.first_run: {config.first_run}")
     if config.first_run:
