@@ -52,7 +52,6 @@ bindsym XF86AudioPrev exec playerctl previous
 #先把屏保功能关了：
 #exec --no-startup-id xset s 0
 
-
 #•win+shift+减号实现隐藏一个窗口，win+减号重新打开
 bindsym $mod+Shift+minus move scratchpad 
 bindsym $mod+minus scratchpad show 
@@ -88,11 +87,11 @@ bindsym $mod+minus scratchpad show
 set $mode_system  lock(L) logout(O) reboot(R) shutdown(S) exit(Esc)
 bindsym $mod+c mode "$mode_system"
 mode "$mode_system" {
-bindsym l exec --no-startup-id i3lock -c '#000000', mode "default"
-bindsym o exec --no-startup-id i3-msg exit, mode "default"
-bindsym r exec --no-startup-id systemctl reboot, mode "default"
-bindsym s exec --no-startup-id systemctl poweroff, mode "default"
-bindsym Escape mode "default"
+    bindsym l exec --no-startup-id i3lock -c '#000000', mode "default"
+    bindsym o exec --no-startup-id i3-msg exit, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym s exec --no-startup-id systemctl poweroff, mode "default"
+    bindsym Escape mode "default"
 }
 
 # end own config
@@ -222,27 +221,27 @@ for_window [class="Vlc"] floating enable
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-# These bindings trigger as soon as you enter the resize mode
+    # These bindings trigger as soon as you enter the resize mode
 
-# Pressing left will shrink the window’s width.
-# Pressing right will grow the window’s width.
-# Pressing up will shrink the window’s height.
-# Pressing down will grow the window’s height.
-bindsym j resize shrink width 10 px or 10 ppt
-bindsym k resize grow height 10 px or 10 ppt
-bindsym l resize shrink height 10 px or 10 ppt
-bindsym semicolon resize grow width 10 px or 10 ppt
+    # Pressing left will shrink the window’s width.
+    # Pressing right will grow the window’s width.
+    # Pressing up will shrink the window’s height.
+    # Pressing down will grow the window’s height.
+    bindsym j resize shrink width 10 px or 10 ppt
+    bindsym k resize grow height 10 px or 10 ppt
+    bindsym l resize shrink height 10 px or 10 ppt
+    bindsym semicolon resize grow width 10 px or 10 ppt
 
-# same bindings, but for the arrow keys
-bindsym Left resize shrink width 10 px or 10 ppt
-bindsym Down resize grow height 10 px or 10 ppt
-bindsym Up resize shrink height 10 px or 10 ppt
-bindsym Right resize grow width 10 px or 10 ppt
+    # same bindings, but for the arrow keys
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
 
-# back to normal: Enter or Escape or $mod+r
-bindsym Return mode "default"
-bindsym Escape mode "default"
-bindsym $mod+r mode "default"
+    # back to normal: Enter or Escape or $mod+r
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+r mode "default"
 }
 
 
@@ -263,23 +262,22 @@ bindsym $mod+Shift+Tab workspace prev
 
 # floating_modifier $mod
 
-
 exec_always --no-startup-id /usr/bin/xscreensaver -no-splash &
-## exec_always --no-startup-id /usr/bin/conky -c ~/.config/conky/conkyrc_test.lua &
+# exec_always --no-startup-id /usr/bin/conky -c ~/.config/conky/conkyrc_test.lua &
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh &
 
 exec --no-startup-id xcompmgr -FCf -nc -t -5 &
 exec --no-startup-id LANG="zh_CN.UTF-8" fcitx-autostart &
 
-exec --no-startup-id xrandr --output VGA-1-1 --auto --right-of LVDS-1-1
+## 双屏显示配置
+exec --no-startup-id $HOME/GitProjects/dotfiles/bin/double_screen_set.sh &
+# exec --no-startup-id xrandr --output VGA-1-1 --auto --right-of LVDS-1-1
 # exec --no-starup-id xrandr --output HDMI-2 --auto --right-of eDP1
 # exec --no-starup-id xrandr --output LVDS-1 --primary
 
 # 自动更换壁纸
 # exec_always --no-startup-id feh --bg-scale "/home/larry/Pictures/download.jpeg"
 exec_always --no-startup-id feh --randomize --bg-scale -z /home/larry/Pictures/Wallpaper/
-# exec --no-startup-id feh --bg-tile -z /home/yt/Wallpaper/
-
 
 # exec cmatrix
 bindsym $mod+Shift+x exec i3-sensible-terminal -e cmatrix
@@ -289,8 +287,6 @@ bindsym $mod+i exec emacs
 bindsym $mod+g exec google-chrome # chromium
 bindsym $mod+t exec thunar
 bindsym $mod+o exec okular
-
-# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # 切换窗口边框
 # bindsym $mod+t border normal
@@ -333,8 +329,6 @@ client.unfocused        #333333 #000000 #FFFFFF #292d2e #222222
 gaps inner 7
 gaps outer 9
 
-
-
 ### bar
 bindsym $mod+m bar mode toggle
 
@@ -344,30 +338,28 @@ bindsym $mod+m bar mode toggle
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 bar {
-output            LVDS-1
+    output            DP-3
 
-status_command i3blocks -c ~/.config/i3blocks/config
-# status_command i3status -c ~/.config/i3status/config
-# status_command py3status -c ~/.config/i3status/i3status.conf
-# status_command $HOME/.config/polybar/launch.sh
+    status_command i3blocks -c ~/.config/i3blocks/config
+    # status_command i3status -c ~/.config/i3status/config
+    # status_command py3status -c ~/.config/i3status/i3status.conf
+    # status_command $HOME/.config/polybar/launch.sh
 
-position top
-mode hide
-workspace_buttons yes
-tray_output       none
-# strip_workspace_numbers yes
-# separator_symbol " . "
+    position top
+    mode hide
+    workspace_buttons yes
+    tray_output       none
+    # strip_workspace_numbers yes
+    # separator_symbol " . "
 
-colors {
-# Show status text in light blue color
-statusline #ADD8E6
-background #000000
+    colors {
+        # Show status text in light blue color
+        statusline #ADD8E6
+        background #000000
 
-focused_workspace  #ffffff #285577
-active_workspace   #ffffff #333333
-inactive_workspace #888888 #222222
-urgent_workspace   #ffffff #900000
-
-}
-
+        focused_workspace  #ffffff #285577
+        active_workspace   #ffffff #333333
+        inactive_workspace #888888 #222222
+        urgent_workspace   #ffffff #900000
+    }
 }

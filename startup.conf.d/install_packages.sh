@@ -11,8 +11,20 @@ sudo apt-get update -y && sudo apt-get upgrade -y && sudo apt-get dist-upgrade -
 # [remove] macs ruby-dev code
 # nodejs npm
 
+# mysql-workbench-community
+# mysql-server mysql-client libmysqlclient-dev
+# telnet curl net-tools vim inetutils-ping nmap
+# openssh-server
+# neofetch
+# sqlite3
+# arandr
+
+sudo apt-get install build-essential ninja-build gdb g++ openssl libssl-dev
+sudo apt-get install clang-10 # lldb-10 lld-10
+
 sudo apt-get install -y golang python3 lua5.3 rustc \
-  maven gradle mysql-server octave \
+  mysql-server \
+  maven gradle octave \
   cmake cmake-qt-gui llvm clang clangd lldb flake8 ninja-build ntfs-3g clangd-12 \
   thunar okular ranger htop glances kazam gimp whowatch ncdu cloc net-tools adb tree neofetch \
   vim zsh rxvt-unicode ffmpeg flameshot samba cifs-utils fd-find ripgrep \
@@ -45,7 +57,7 @@ sudo apt-get install -y golang python3 lua5.3 rustc \
 # gem update
 
 # input
-sudo apt-get remove -y ibus 1>/dev/null
+# sudo apt-get remove -y ibus 1>/dev/null
 sudo apt-get install -y fcitx5 fcitx5-chinese-addons fcitx5-frontend-qt5 1>/dev/null
 
 # 不要用脚本自动安装带有安装交互的软件包

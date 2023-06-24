@@ -18,8 +18,11 @@ if __name__ == '__main__':
         'code',
         'emacs',
         'pycharm-community',
-        'pycharm-professional'
+        'pycharm-professional',
+        'mysql-workbench-community'
     ]
+
+    # sudo snap install dbeaver-ce
 
     check_and_install(pkg_names)
 
