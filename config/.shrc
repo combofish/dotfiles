@@ -24,8 +24,8 @@ export PATH="$PATH:$HOME/gems/bin"
 # Android Studio
 # export PATH=$PATH:$HOME/Downloads/android-studio/bin
 
-export C_INCLUDE_PATH=/usr/include
-export CPLUS_INCLUDE_PATH=/usr/include
+# export C_INCLUDE_PATH=/usr/include
+# export CPLUS_INCLUDE_PATH=/usr/include
 
 # CUDA
 export CUDA=/usr/local/cuda
@@ -70,7 +70,6 @@ export GTK_IM_MODULE=fcitx
 export XMODIFIERS="@im=fcitx"
 export QT_IM_MODULE=fcitx
 
-
 ### alias
 alias lm="ls -la | more"
 alias h="history"
@@ -79,7 +78,7 @@ alias ipython="ipython --pylab"
 alias g2a="g++ --std=c++2a"
 alias py3="time python3"
 alias clr="clear"
-alias cat="ccat"
+# alias cat="ccat"
 alias wget6="wget --inet6-only"
 
 # apt-get 
@@ -121,10 +120,6 @@ unset release_name
 
 ### used in arch
 #export ZSH=$HOME/sources/oh-my-zsh
-
-### Used in debain-like system
-alias apti="apt-get install"
-alias apts="apt-cache search"
 
 ### val
 export brightness="/sys/class/backlight/intel_backlight/brightness"

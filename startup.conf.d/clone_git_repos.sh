@@ -22,8 +22,8 @@ repo_zsh_sugg="$repos_dir/ohmyzsh/plugins/zsh-autosuggestions"
 repo_zsh_high="$repos_dir/ohmyzsh/plugins/zsh-syntax-highlighting"
 
 dir_or_execute "$repo_blog" "git clone git@github.com:combofish/combofish.github.io.git $repo_blog"
-dir_or_execute "$repo_notes" "git clone git@github.com:combofish/chips-get.git $repo_notes"
-dir_or_execute "$repo_code" "git clone git@github.com:combofish/carve-in-mind.git $repo_code"
+dir_or_execute "$repo_notes" "git clone git@github.com:combofish/carve-in-mind.git $repo_notes"
+dir_or_execute "$repo_code" "git clone git@github.com:combofish/chips-get.git $repo_code"
 dir_or_execute "$repo_leetcode" "git clone git@github.com:combofish/leetcode-solutions-cpp.git $repo_leetcode"
 dir_or_execute "$repo_web_server" "git clone git@github.com:combofish/tiny-web-server.git $repo_web_server"
 
