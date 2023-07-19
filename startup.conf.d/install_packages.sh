@@ -21,6 +21,7 @@ sudo apt-get update -y && sudo apt-get upgrade -y && sudo apt-get dist-upgrade -
 
 sudo apt-get install build-essential ninja-build gdb g++ openssl libssl-dev
 sudo apt-get install clang-10 # lldb-10 lld-10
+sudo apt-get install -y openssh-client openssh-server
 
 sudo apt-get install -y golang python3 lua5.3 rustc \
   mysql-server \
