@@ -34,6 +34,12 @@ export C_INCLUDE_PATH=/usr/local/cuda/targets/x86_64-linux/include:$C_INCLUDE_PA
 export CPLUS_INCLUDE_PATH=/usr/local/cuda/targets/x86_64-linux/include:$CPLUS_INCLUDE_PATH
 export LD_LIBRARY_PATH=$CUDA/lib:$CUDA/lib64:$LD_LIBRARY_PATH
 
+# TensorRT
+TENSORRT_ROOT=${HOME}/.local
+TENSORRT_VERSION='8.5.3.1'
+export PATH=${TENSORRT_ROOT}/TensorRT-${TENSORRT_VERSION}/bin:${PATH}
+export LD_LIBRARY_PATH=${TENSORRT_ROOT}/TensorRT-${TENSORRT_VERSION}/lib:${LD_LIBRARY_PATH}
+
 # pkg-config
 # For opencv4
 PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig
