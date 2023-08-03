@@ -16,6 +16,7 @@ if __name__ == '__main__':
     pkg_names = [
         'clion',
         'code',
+        'code-insiders',
         'emacs',
         'pycharm-community',
         'pycharm-professional',

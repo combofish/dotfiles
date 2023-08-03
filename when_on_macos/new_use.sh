@@ -6,6 +6,7 @@ brew install mactex --cask
 brew install wget
 brew install iterm2 --cask
 brew install todesk --cask
+# brew install cinebench --cask
 
 
 # Upgrade Homebrew and the information about formulas
