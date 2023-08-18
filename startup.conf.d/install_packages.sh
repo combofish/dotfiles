@@ -24,13 +24,12 @@ sudo apt-get install clang-10 # lldb-10 lld-10
 # sudo apt-get install libpython3-dev 
 # apt-get install libprotobuf-dev protobuf-compiler
 sudo apt-get install -y openssh-client openssh-server
-
+sudo apt-get install -y libmysqlclient-dev mysql-server
 sudo apt-get install -y golang python3 lua5.3 rustc \
-  mysql-server \
   maven gradle octave \
   cmake cmake-qt-gui llvm clang clangd lldb flake8 ninja-build ntfs-3g clangd-12 \
   thunar okular ranger htop glances kazam gimp whowatch ncdu cloc net-tools adb tree neofetch \
-  vim zsh rxvt-unicode ffmpeg flameshot samba cifs-utils fd-find ripgrep \
+  vim zsh tmux rxvt-unicode ffmpeg flameshot samba cifs-utils fd-find ripgrep \
   fcitx-config-gtk fonts-wqy-microhei qtcreator \
   tesseract-ocr tesseract-ocr-eng libtesseract-dev arduino android-sdk \
   1>/dev/null
