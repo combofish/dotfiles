@@ -20,7 +20,8 @@ if __name__ == '__main__':
         'emacs',
         'pycharm-community',
         'pycharm-professional',
-        'mysql-workbench-community'
+        'mysql-workbench-community',
+        # 'hugo'
     ]
 
     # sudo snap install dbeaver-ce
