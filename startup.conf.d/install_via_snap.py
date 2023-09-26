@@ -14,13 +14,13 @@ def check_and_install(package_names):
 if __name__ == '__main__':
     """ install packages via snap """
     pkg_names = [
-        'clion',
+        # 'clion',
         'code',
-        'code-insiders',
-        'emacs',
-        'pycharm-community',
-        'pycharm-professional',
-        'mysql-workbench-community',
+        # 'code-insiders',
+        # 'emacs',
+        # 'pycharm-community',
+        # 'pycharm-professional',
+        # 'mysql-workbench-community',
         # 'hugo'
     ]
 
