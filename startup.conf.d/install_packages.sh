@@ -25,11 +25,14 @@ sudo apt-get install clang-10 # lldb-10 lld-10
 # apt-get install libprotobuf-dev protobuf-compiler
 sudo apt-get install -y openssh-client openssh-server
 
+# # boost
+sudo apt-get install libboost-all-dev
+
 sudo apt-get install -y golang python3 lua5.3 rustc \
   mysql-server \
   maven gradle octave \
   cmake cmake-qt-gui llvm clang clangd lldb flake8 ninja-build ntfs-3g clangd-12 \
-  thunar okular ranger htop glances kazam gimp whowatch ncdu cloc net-tools adb tree neofetch \
+  thunar okular ranger htop at glances kazam gimp whowatch ncdu cloc net-tools adb tree neofetch \
   vim zsh rxvt-unicode ffmpeg flameshot samba cifs-utils fd-find ripgrep \
   fcitx-config-gtk fonts-wqy-microhei qtcreator \
   tesseract-ocr tesseract-ocr-eng libtesseract-dev arduino android-sdk \
