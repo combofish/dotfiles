@@ -55,8 +55,11 @@ export PATH=$JAVA_HOME/bin:$PATH
 # export CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar 
 
 # conda
-source $HOME/anaconda3/etc/profile.d/conda.sh
-# source /home/larry/miniconda3/etc/profile.d/conda.sh    
+if [ -d "${HOME}/anaconda3/"]; then
+    source $HOME/anaconda3/etc/profile.d/conda.sh
+else if [ -d "${HOME}/miniconda3/" ]; then
+    source ${HOME}/miniconda3/etc/profile.d/conda.sh   
+fi
 
 # ros
 # source /opt/ros/noetic/setup.zsh

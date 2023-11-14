@@ -24,8 +24,8 @@ export PATH="$PATH:$HOME/gems/bin"
 # Android Studio
 # export PATH=$PATH:$HOME/Downloads/android-studio/bin
 
-export C_INCLUDE_PATH=/usr/include
-export CPLUS_INCLUDE_PATH=/usr/include
+#export C_INCLUDE_PATH=/usr/include
+#export CPLUS_INCLUDE_PATH=/usr/include
 
 # CUDA
 export CUDA=/usr/local/cuda

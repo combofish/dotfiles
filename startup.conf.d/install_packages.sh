@@ -28,15 +28,18 @@ sudo apt-get install -y openssh-client openssh-server
 # # boost
 sudo apt-get install libboost-all-dev
 
+sudo apt-get install -y libmysqlclient-dev mysql-server
+
 sudo apt-get install -y golang python3 lua5.3 rustc \
-  mysql-server \
-  maven gradle octave \
   cmake cmake-qt-gui llvm clang clangd lldb flake8 ninja-build ntfs-3g clangd-12 \
   thunar okular ranger htop at glances kazam gimp whowatch ncdu cloc net-tools adb tree neofetch \
   vim zsh rxvt-unicode ffmpeg flameshot samba cifs-utils fd-find ripgrep \
   fcitx-config-gtk fonts-wqy-microhei qtcreator \
   tesseract-ocr tesseract-ocr-eng libtesseract-dev arduino android-sdk \
   1>/dev/null
+
+# tesseract-ocr tesseract-ocr-eng libtesseract-dev arduino android-sdk ffmpeg maven gradle
+# qtcreator octave
 
 # build kernel
 # sudo apt-get install git fakeroot build-essential ncurses-dev xz-utils libssl-dev bc flex libelf-dev bison dwarves zstd
