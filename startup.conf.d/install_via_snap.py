@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import subprocess
-
+from install_via_apt import startup_r
 
 def check_and_install(package_names):
     res = subprocess.getoutput('sudo snap list')
@@ -8,7 +8,7 @@ def check_and_install(package_names):
 
     for name in package_names:
         if name not in installed_pkgs:
-            subprocess.run(f"sudo snap install --classic {name}", shell=True)
+            startup_r(f"sudo snap install --classic {name}", prefix='install_via_snap')
 
 
 if __name__ == '__main__':
@@ -16,7 +16,7 @@ if __name__ == '__main__':
     pkg_names = [
         # 'clion',
         'code',
-        # 'code-insiders',
+        'code-insiders',
         # 'emacs',
         # 'pycharm-community',
         # 'pycharm-professional',
@@ -28,4 +28,4 @@ if __name__ == '__main__':
 
     check_and_install(pkg_names)
 
-    subprocess.run("sudo snap refresh", shell=True)
+    startup_r("sudo snap refresh", prefix='install_via_snap')

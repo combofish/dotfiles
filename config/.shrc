@@ -1,0 +1,156 @@
+# add to .zshrc
+
+### change PATH
+export PATH=$HOME/.local/bin:$PATH
+export GOPATH=$HOME/GoProjects
+export PATH=$PATH:$GOPATH/bin
+
+# export DOTFILES=$HOME/Documents/dotfiles
+export DOTFILES=$HOME/GitProjects/dotfiles
+export PATH=$PATH:$DOTFILES/bin
+
+export PATH=$PATH:$HOME/.local/bin
+
+# doom-emacs
+export PATH=$PATH:$HOME/.emacs.d/bin
+
+# snap
+export PATH=/snap/bin:$PATH
+
+# Install Ruby Gems to ~/gems
+export GEM_HOME="$HOME/gems"
+export PATH="$PATH:$HOME/gems/bin"
+
+# Android Studio
+# export PATH=$PATH:$HOME/Downloads/android-studio/bin
+
+# export C_INCLUDE_PATH=/usr/include
+# export CPLUS_INCLUDE_PATH=/usr/include
+
+# CUDA
+export CUDA=/usr/local/cuda
+export PATH=$PATH:$CUDA/bin
+export C_INCLUDE_PATH=/usr/local/cuda/targets/x86_64-linux/include:$C_INCLUDE_PATH
+export CPLUS_INCLUDE_PATH=/usr/local/cuda/targets/x86_64-linux/include:$CPLUS_INCLUDE_PATH
+export LD_LIBRARY_PATH=$CUDA/lib:$CUDA/lib64:$LD_LIBRARY_PATH
+
+# TensorRT
+TENSORRT_ROOT=${HOME}/.local
+TENSORRT_VERSION='8.5.3.1'
+export PATH=${TENSORRT_ROOT}/TensorRT-${TENSORRT_VERSION}/bin:${PATH}
+export LD_LIBRARY_PATH=${TENSORRT_ROOT}/TensorRT-${TENSORRT_VERSION}/lib:${LD_LIBRARY_PATH}
+
+# pkg-config
+# For opencv4
+PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig
+export PKG_CONFIG_PATH
+
+# Maven
+export MAVEN_HOME=/usr/share/maven
+export PATH=$MAVEN_HOME/bin:$PATH
+
+# JAVA
+export JAVA_HOME=/usr/lib/jvm/java-14-openjdk-amd64
+export PATH=$JAVA_HOME/bin:$PATH
+# export CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar 
+
+# # conda
+# if [ -d "${HOME}/anaconda3/"]; then
+#     # echo "source $HOME/anaconda3/etc/profile.d/conda.sh"
+#     source $HOME/anaconda3/etc/profile.d/conda.sh
+#     export PATH=$HOME/anaconda3/bin:$PATH
+# else if [ -d "${HOME}/miniconda3/" ]; then
+#     # echo "source ${HOME}/miniconda3/etc/profile.d/conda.sh"
+#     source ${HOME}/miniconda3/etc/profile.d/conda.sh   
+# fi
+
+# ros
+# source /opt/ros/noetic/setup.zsh
+# source /opt/ros/ /opt/ros/melodic/setup.zsh
+# source ~/workspace/catkin_ws/devel/setup.zsh
+
+# proxy
+# source $DOTFILES/bin/teminal_proxy.sh
+
+# IBUS
+# export GTK_IM_MODULE=ibus
+# export XMODIFIERS=@im=ibus
+# export QT_IM_MODULE=ibus
+
+# fcitx
+export GTK_IM_MODULE=fcitx
+export XMODIFIERS="@im=fcitx"
+export QT_IM_MODULE=fcitx
+
+### alias
+alias lm="ls -la | more"
+alias h="history"
+alias chmodx="chmod u+x"
+alias ipython="ipython --pylab"
+alias g2a="g++ --std=c++2a"
+alias py3="time python3"
+alias clr="clear"
+# alias cat="ccat"
+alias wget6="wget --inet6-only"
+
+# apt-get 
+alias apts="sudo apt-cache search"
+alias apti="sudo apt-get install"
+
+export GOPROXY=https://goproxy.io
+export GO111MODULE=on
+
+release_name=`uname -r | cut -d '-' -f 2`
+if test $release_name = 'gentoo' ; then
+    #### alias on gentoo
+    alias eqf='equery f'
+    alias equ='equery u'
+    alias eqh='equery h'
+    alias eqa='equery a'
+    alias eqb='equery b'
+    alias eql='equery l'
+    alias eqd='equery d'
+    alias eqg='equery g'
+    alias eqc='equery c'
+    alias eqk='equery k'
+    alias eqm='equery m'
+    alias eqy='equery y'
+    alias eqs='equery s'
+    alias eqw='equery w'
+
+    
+    ### used in gentoo
+    export PATH=$HOME/Downloads/gcc-arm-none-eabi-8-2018-q4-major/bin/:$PATH
+    export PATH=$HOME/.bin/stm32loader/:$PATH
+    export PATH=$HOME/.gem/ruby/2.3.0/bin/:$PATH
+    #export NODE_ENV=production
+    export NODE_ENV=development
+
+fi
+
+unset release_name
+
+### used in arch
+#export ZSH=$HOME/sources/oh-my-zsh
+
+### val
+export brightness="/sys/class/backlight/intel_backlight/brightness"
+export max_brightness="/sys/class//backlight/intel_backlight/max_brightness"
+
+
+# added by Anaconda3 5.3.1 installer
+# >>> conda init >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$(CONDA_REPORT_ERRORS=false '$HOME/anaconda3/bin/conda' shell.bash hook 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    \eval "$__conda_setup"
+else
+    if [ -f "/home/larry/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/larry/anaconda3/etc/profile.d/conda.sh"
+        CONDA_CHANGEPS1=false conda activate base
+    else
+        \export PATH="/home/larry/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda init <<<

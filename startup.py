@@ -1,9 +1,18 @@
 #!/usr/bin/env python
+'''
+Author: larry combofish@163.com
+Date: 2023-06-24 15:53:57
+LastEditors: larry combofish@163.com
+LastEditTime: 2023-12-21 11:12:04
+FilePath: /dotfiles/startup.py
+Description: 
+'''
 
 import argparse
 import os
 import subprocess
 import sys
+from pathlib import Path
 
 work_dir = os.path.join(os.environ['HOME'], 'GitProjects/dotfiles')
 scripts_dir = 'startup.conf.d/'
@@ -29,8 +38,11 @@ def main(config):
         if file.endswith('.sh') or file.endswith('.py'):
             file_path = os.path.join(dirs, file)
             if os.access(file_path, os.X_OK):
-                print(file)
+                # print(file)
+                prefix = 'inst'
+                print(f"\033[0;31m{prefix}\033[0m - run - {Path(file_path).name}")
                 subprocess.run(file_path, shell=True)
+                
 
     print(f"config.first_run: {config.first_run}")
     if config.first_run:
