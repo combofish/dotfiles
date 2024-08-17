@@ -2,14 +2,14 @@
 '''
 Author: larry combofish@163.com
 Date: 2023-12-21 09:27:20
-LastEditors: larry combofish@163.com
-LastEditTime: 2023-12-21 14:26:48
+LastEditors: combofish combofish@163.com
+LastEditTime: 2024-08-12 09:37:13
 FilePath: /dotfiles/startup.conf.d/install_pkgs.py
 Description: install pkgs
 '''
 
 import subprocess
-from icecream import ic
+# from icecream import ic
 from pathlib import Path
 
 
@@ -19,52 +19,56 @@ dev_pkgs = """
     openssh-client openssh-server
     
     # Dev Softwares
-    nodejs npm  golang lua5.3 rustc llvm lldb
+    # nodejs npm  golang lua5.3 rustc lldb
+    llvm
     
     # Build Tools
     cmake cmake-qt-gui
     python3 flake8
-    ninja-build maven gradle
-    libboost-all-dev
+    # ninja-build maven gradle
+    # libboost-all-dev
     
     # Database
-    mysql-server mysql-client libmysqlclient-dev sqlite3
+    # mysql-server mysql-client libmysqlclient-dev 
+    sqlite3
 
     # build kernel
-    git fakeroot build-essential libncurses-dev
-    xz-utils libssl-dev bc
-    flex libelf-dev bison dwarves zstd
+    git 
+    # fakeroot libncurses-dev xz-utils libssl-dev bc
+    # flex libelf-dev bison dwarves zstd
     
     # Tools
+    # octave qtcreator
+    # ffmpeg gimp samba
     ncdu cloc net-tools tree neofetch
-    vim zsh rxvt-unicode ffmpeg flameshot samba
+    vim zsh rxvt-unicode  flameshot 
     cifs-utils fd-find ripgrep
-    octave qtcreator
-    neofetch ntfs-3g telnet curl net-tools vim inetutils-ping nmap filezilla
-    thunar okular ranger htop at glances kazam gimp whowatch arandr
+    neofetch ntfs-3g telnet curl net-tools vim inetutils-ping nmap 
+    filezilla
+    thunar okular ranger htop at glances kazam whowatch arandr
     
     # Font
     fcitx-config-gtk fonts-wqy-microhei
     
     # KVM Software
-    qemu virt-manager virt-viewer libvirt-daemon-system libvirt-clients
+    # qemu virt-manager virt-viewer libvirt-daemon-system libvirt-clients
     
     # Tex Software
-    texlive-full texmaker texstudio
+    # texlive-full texmaker texstudio
     
     # Embedded Software
-    minicom setserial putty gtkterm screen
+    # minicom setserial putty gtkterm screen
     
     # Other
-    tesseract-ocr tesseract-ocr-eng libtesseract-dev arduino android-sdk adb
-    libgoogle-glog-dev libgflags-dev libfreetype6-dev libharfbuzz-dev
+    # tesseract-ocr tesseract-ocr-eng libtesseract-dev arduino android-sdk adb
+    # libgoogle-glog-dev libgflags-dev libfreetype6-dev libharfbuzz-dev
     
     # TODO : Need Repo
     # mysql-workbench-community
 """
 
 
-def startup_r(cmd: str, prefix='', tag='exec', quiet=True):
+def startup_r(cmd: str, prefix='', tag='exec', quiet=False):
     prefix = Path(__file__).name if prefix == '' else prefix
     print(f"\033[0;31m{prefix}\033[0m - {tag} - {cmd}")
 
