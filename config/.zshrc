@@ -149,7 +149,21 @@ if [ -f ~/.shrc ]; then
     source ~/.shrc
 fi
 
-export PATH=/opt/_internal/cpython-3.7.0/bin:/opt/conda/bin:/opt/miniforge3/bin:/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/mpich/bin
-export LD_LIBRARY_PATH=/opt/_internal/cpython-3.7.0/lib:/usr/local/nvidia/lib:/usr/local/nvidia/lib64:/usr/local/mpich/lib
 
-export PATH=$PATH:/home/kas/GitProjects/scripts/bin
+
+arch=$(uname -m)
+if [[ "$arch" == "x86_64" ]]; then
+    # echo "System is x86_64"
+    export PATH=/opt/_internal/cpython-3.7.0/bin:/opt/conda/bin:/opt/miniforge3/bin:/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/mpich/bin
+    export LD_LIBRARY_PATH=/opt/_internal/cpython-3.7.0/lib:/usr/local/nvidia/lib:/usr/local/nvidia/lib64:/usr/local/mpich/lib
+
+    export PATH=$PATH:/home/kas/GitProjects/scripts/bin
+
+    
+elif [[ "$arch" == "aarch64" || "$arch" == "arm"* ]]; then
+    # echo "System is ARM"
+
+
+else
+    echo "Unknown architecture: $arch"
+fi
