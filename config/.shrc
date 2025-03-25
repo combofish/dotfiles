@@ -14,7 +14,7 @@ if [[ "$arch" == "x86_64" ]]; then
     export CUSTOM_VAR="My custom variable"
     export CUTLASS_PATH="/home/kas/kas_workspace/zhaoliming/GitProjects/cutlass-main"
     export PATH=$PATH:/home/kas/user_bin
-    export PATH=$PATH:home/kas/GitProjects/scripts/bin
+    export PATH=$PATH:/home/kas/GitProjects/scripts/bin
 
     # alias ll="ls -alF"
     # alias gs="git status"
@@ -30,6 +30,7 @@ elif [[ "$arch" == "aarch64" || "$arch" == "arm"* ]]; then
     # echo "System is ARM"
 
     alias run="/home/kas/kas_workspace/zhaoliming/GitProjects/scripts/bin/shell_runner.sh"
+    export PATH=$PATH:/home/kas/kas_workspace/zhaoliming/GitProjects/scripts/bin
 else
     echo "Unknown architecture: $arch"
 fi
