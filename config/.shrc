@@ -8,19 +8,32 @@
 ### 
 
 # ~/.shrc
+arch=$(uname -m)
+if [[ "$arch" == "x86_64" ]]; then
+    # echo "System is x86_64"
+    export CUSTOM_VAR="My custom variable"
+    export CUTLASS_PATH="/home/kas/kas_workspace/zhaoliming/GitProjects/cutlass-main"
+    export PATH=$PATH:/home/kas/user_bin
+    export PATH=$PATH:home/kas/GitProjects/scripts/bin
 
-export CUSTOM_VAR="My custom variable"
-export CUTLASS_PATH="/home/kas/kas_workspace/zhaoliming/GitProjects/cutlass-main"
-export PATH=$PATH:/home/kas/user_bin
-export PATH=$PATH:home/kas/GitProjects/scripts/bin
+    # alias ll="ls -alF"
+    # alias gs="git status"
+    alias wnv="watch -d -n 1 nvidia-smi"
+    alias pipq="pip -i https://pypi.tuna.tsinghua.edu.cn/simple"
+    alias pipa="pip -i https://mirrors.aliyun.com/pypi/simple"
+    alias run="/home/kas/GitProjects/scripts/bin/shell_runner.sh"
 
-# alias ll="ls -alF"
-# alias gs="git status"
-alias wnv="watch -d -n 1 nvidia-smi"
-alias pipq="pip -i https://pypi.tuna.tsinghua.edu.cn/simple"
-alias pipa="pip -i https://mirrors.aliyun.com/pypi/simple"
-alias run="/home/kas/GitProjects/scripts/bin/shell_runner.sh"
+    export LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/lib/x86_64-linux-gnu:/usr/local/nvidia/lib
 
-export LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/lib/x86_64-linux-gnu:/usr/local/nvidia/lib
+
+elif [[ "$arch" == "aarch64" || "$arch" == "arm"* ]]; then
+    # echo "System is ARM"
+
+    alias run="/home/kas/kas_workspace/zhaoliming/GitProjects/scripts/bin/shell_runner.sh"
+else
+    echo "Unknown architecture: $arch"
+fi
+
+
 
 # end of file

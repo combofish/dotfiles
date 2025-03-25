@@ -6,6 +6,18 @@
 # export ZSH=$HOME/.oh-my-zsh
 # export ZSH=$HOME/Documents/ohmyzsh
 export ZSH=$HOME/GitProjects/ohmyzsh
+
+arch=$(uname -m)
+if [[ "$arch" == "aarch64" || "$arch" == arm* ]]; then
+    # echo "System is ARM"
+    
+    # 仅在 ARM 且用户是 kas 时修改 ZSH 变量
+    if [[ $USER == "kas" ]]; then
+        export ZSH="/home/kas/kas_workspace/zhaoliming/GitProjects/ohmyzsh"
+    fi
+fi
+
+
 # [[ -f ~/.shrc ]] && . ~/.shrc
 
 alias cls='clear'
