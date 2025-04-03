@@ -1,11 +1,35 @@
+#!/bin/bash
 ###
- # @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- # @Date: 2025-03-14 08:24:58
- # @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- # @LastEditTime: 2025-03-14 08:24:59
- # @FilePath: /dotfiles/config/.shrc
- # @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
-### 
+# @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
+# @Date: 2025-03-14 08:24:58
+ # @LastEditors: combofish combofish@163.com
+ # @LastEditTime: 2025-04-03 07:00:39
+# @FilePath: /dotfiles/config/.shrc
+# @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+###
+
+# 获取 Python 版本号
+PYTHON_VERSION=$(python3 --version 2>&1 | awk '{print $2}')
+PYTHON_MAJOR=$(echo "$PYTHON_VERSION" | cut -d. -f1)
+PYTHON_MINOR=$(echo "$PYTHON_VERSION" | cut -d. -f2)
+
+# 检查是否是 Python 3.8
+is_python_version_3_8() {
+    if [ "$PYTHON_MAJOR" -eq 3 ] && [ "$PYTHON_MINOR" -eq 8 ]; then
+        return 0 # 返回 0 表示是 3.8
+    else
+        return 1 # 返回 1 表示不是 3.8
+    fi
+}
+
+# 检查是否是 Python 3.10
+is_python_version_3_10() {
+    if [ "$PYTHON_MAJOR" -eq 3 ] && [ "$PYTHON_MINOR" -eq 10 ]; then
+        return 0 # 返回 0 表示是 3.10
+    else
+        return 1 # 返回 1 表示不是 3.10
+    fi
+}
 
 # ~/.shrc
 arch=$(uname -m)
@@ -25,16 +49,45 @@ if [[ "$arch" == "x86_64" ]]; then
 
     export LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/lib/x86_64-linux-gnu:/usr/local/nvidia/lib
 
-
 elif [[ "$arch" == "aarch64" || "$arch" == "arm"* ]]; then
     # echo "System is ARM"
 
     alias run="/home/kas/kas_workspace/zhaoliming/GitProjects/scripts/bin/shell_runner.sh"
+    alias wnv="watch -d -n 1 npu-smi info"
     export PATH=$PATH:/home/kas/kas_workspace/zhaoliming/GitProjects/scripts/bin
+
+    # 调用函数并输出结果
+    if is_python_version_3_8; then
+        echo "当前 Python 版本是 3.8"
+
+        # export LD_LIBRARY_PATH=/usr/local/Ascend/driver/lib64/driver/:/usr/local/python3.8.18/lib:
+        # export PATH=/usr/local/python3.8.18/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/Ascend/ascend-toolkit/latest/fwkacllib/ccec_compiler/bin/:/usr/local/Ascend/ascend-toolkit/latest/toolkit/tools/ide_daemon/bin/:/usr/local/Ascend/ascend-toolkit/latest/tools/hccl_test/bin/:/usr/local/mpich/bin:/usr/local/mpich/bin
+        # export LD_LIBRARY_PATH=/usr/local/Ascend/ascend-toolkit/latest/fwkacllib/lib64/:/usr/local/python3.8.18/lib/python3.8/site-packages/torch/lib:/usr/local/Ascend/driver/lib64/:/usr/local/Ascend/driver/lib64/common/:/usr/local/Ascend/driver/lib64/driver/:/usr/local/Ascend/add-ons/:/usr/lib/aarch64_64-linux-gnu:/usr/local/python3.8.18/lib::/usr/local/mpich/lib:/usr/local/Ascend/ascend-toolkit/latest/lib64:/usr/local/Ascend/ascend-toolkit/latest/fwkacllib/lib64:/usr/local/Ascend/ascend-toolkit/latest/aarch64-linux/devlib/:/usr/local/mpich/lib:/usr/local/Ascend/ascend-toolkit/latest/lib64:/usr/local/Ascend/ascend-toolkit/latest/fwkacllib/lib64:/usr/local/Ascend/ascend-toolkit/latest/aarch64-linux/devlib/
+        export PATH=/opt/_internal/cpython-3.7.0/bin:/opt/conda/bin:/usr/local/python3.8.18/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/Ascend/ascend-toolkit/latest/fwkacllib/ccec_compiler/bin/:/usr/local/Ascend/ascend-toolkit/latest/toolkit/tools/ide_daemon/bin/:/usr/local/Ascend/ascend-toolkit/latest/tools/hccl_test/bin/:/usr/local/mpich/bin:/usr/local/Ascend/ascend-toolkit/latest/tools/hccl_test/bin
+        export LD_LIBRARY_PATH=/opt/_internal/cpython-3.7.0/lib:/usr/local/Ascend/ascend-toolkit/latest/fwkacllib/lib64/:/usr/local/python3.8.18/lib/python3.8/site-packages/torch/lib:/usr/local/Ascend/driver/lib64/:/usr/local/Ascend/driver/lib64/common/:/usr/local/Ascend/driver/lib64/driver/:/usr/local/Ascend/add-ons/:/usr/lib/aarch64_64-linux-gnu:/usr/local/python3.8.18/lib::/usr/local/mpich/lib:/usr/local/Ascend/ascend-toolkit/latest/lib64:/usr/local/Ascend/ascend-toolkit/latest/fwkacllib/lib64:/usr/local/Ascend/ascend-toolkit/latest/aarch64-linux/devlib/
+
+        source /usr/local/Ascend/ascend-toolkit/set_env.sh
+        source /usr/local/Ascend/nnal/atb/set_env.sh
+
+    elif is_python_version_3_10; then
+        echo "当前 Python 版本是 3.10"
+
+        export PATH=/opt/_internal/cpython-3.7.0/bin:/opt/conda/bin:/usr/local/python3.10/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+        export LD_LIBRARY_PATH=/opt/_internal/cpython-3.7.0/lib:/usr/local/Ascend/driver/lib64/common:/usr/local/Ascend/driver/lib64/driver:
+
+        export PATH=/usr/local/python3.10/bin:${PATH}
+        export LD_LIBRARY_PATH=/usr/local/Ascend/driver/lib64/common:/usr/local/Ascend/driver/lib64/driver:${LD_LIBRARY_PATH}
+        source /usr/local/Ascend/ascend-toolkit/set_env.sh
+        # source /usr/local/Ascend/nnal/atb/set_env.sh
+        source /usr/local/Ascend/nnal/atb/8.0.0/atb/set_env.sh
+        # source /usr/local/Ascend/nnal/atb/latest/atb/set_env.sh
+
+    else
+        echo "当前 Python 版本不是 3.8 也不是 3.10，而是 $PYTHON_VERSION"
+    fi
+
 else
     echo "Unknown architecture: $arch"
 fi
-
-
 
 # end of file
