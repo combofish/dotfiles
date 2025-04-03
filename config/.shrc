@@ -3,7 +3,7 @@
 # @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
 # @Date: 2025-03-14 08:24:58
  # @LastEditors: combofish combofish@163.com
- # @LastEditTime: 2025-04-03 07:00:39
+ # @LastEditTime: 2025-04-03 08:37:13
 # @FilePath: /dotfiles/config/.shrc
 # @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 ###
@@ -52,10 +52,6 @@ if [[ "$arch" == "x86_64" ]]; then
 elif [[ "$arch" == "aarch64" || "$arch" == "arm"* ]]; then
     # echo "System is ARM"
 
-    alias run="/home/kas/kas_workspace/zhaoliming/GitProjects/scripts/bin/shell_runner.sh"
-    alias wnv="watch -d -n 1 npu-smi info"
-    export PATH=$PATH:/home/kas/kas_workspace/zhaoliming/GitProjects/scripts/bin
-
     # 调用函数并输出结果
     if is_python_version_3_8; then
         echo "当前 Python 版本是 3.8"
@@ -85,6 +81,11 @@ elif [[ "$arch" == "aarch64" || "$arch" == "arm"* ]]; then
     else
         echo "当前 Python 版本不是 3.8 也不是 3.10，而是 $PYTHON_VERSION"
     fi
+
+
+    alias run="/home/kas/kas_workspace/zhaoliming/GitProjects/scripts/bin/shell_runner.sh"
+    alias wnv="watch -d -n 1 npu-smi info"
+    export PATH=$PATH:/home/kas/kas_workspace/zhaoliming/GitProjects/scripts/bin
 
 else
     echo "Unknown architecture: $arch"
