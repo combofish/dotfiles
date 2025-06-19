@@ -3,7 +3,7 @@
 # @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
 # @Date: 2025-03-14 08:24:58
  # @LastEditors: combofish combofish@163.com
- # @LastEditTime: 2025-04-09 07:40:08
+ # @LastEditTime: 2025-04-08 02:48:06
 # @FilePath: /dotfiles/config/.shrc
 # @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 ###
@@ -63,7 +63,7 @@ elif [[ "$arch" == "aarch64" || "$arch" == "arm"* ]]; then
 
     # 调用函数并输出结果
     if is_python_version_3_8; then
-        # echo "当前 Python 版本是 3.8"
+        echo "当前 Python 版本是 3.8"
 
         # export LD_LIBRARY_PATH=/usr/local/Ascend/driver/lib64/driver/:/usr/local/python3.8.18/lib:
         # export PATH=/usr/local/python3.8.18/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/Ascend/ascend-toolkit/latest/fwkacllib/ccec_compiler/bin/:/usr/local/Ascend/ascend-toolkit/latest/toolkit/tools/ide_daemon/bin/:/usr/local/Ascend/ascend-toolkit/latest/tools/hccl_test/bin/:/usr/local/mpich/bin:/usr/local/mpich/bin
@@ -75,7 +75,7 @@ elif [[ "$arch" == "aarch64" || "$arch" == "arm"* ]]; then
         source /usr/local/Ascend/nnal/atb/set_env.sh
 
     elif is_python_version_3_10; then
-        # echo "当前 Python 版本是 3.10"
+        echo "当前 Python 版本是 3.10"
 
         export PATH=/opt/_internal/cpython-3.7.0/bin:/opt/conda/bin:/usr/local/python3.10/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
         export LD_LIBRARY_PATH=/opt/_internal/cpython-3.7.0/lib:/usr/local/Ascend/driver/lib64/common:/usr/local/Ascend/driver/lib64/driver:
