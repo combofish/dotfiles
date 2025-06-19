@@ -1,12 +1,4 @@
 #!/usr/bin/env sh
-###
- # @Author: combofish combofish@163.com
- # @Date: 2024-08-06 12:56:46
- # @LastEditors: combofish combofish@163.com
- # @LastEditTime: 2024-08-16 17:59:50
- # @FilePath: /dotfiles/startup.conf.d/clone_git_repos.sh
- # @Description: 
-### 
 
 repos_dir="$HOME/GitProjects"
 
@@ -18,16 +10,17 @@ dir_or_execute(){
 }
 
 # personal repos
-# repo_blog="$repos_dir/combofish.github.io"
-# repo_notes="$repos_dir/carve-in-mind"
-# repo_code="$repos_dir/chips-get"
-# repo_leetcode="$repos_dir/leetcode-solutions-cpp"
-# repo_web_server="$repos_dir/tiny-web-server"
+repo_blog="$repos_dir/combofish.github.io"
+repo_notes="$repos_dir/carve-in-mind"
+repo_code="$repos_dir/chips-get"
+repo_leetcode="$repos_dir/leetcode-solutions-cpp"
+repo_web_server="$repos_dir/tiny-web-server"
 
 # tools
 repo_zsh="$repos_dir/ohmyzsh"
 repo_zsh_sugg="$repos_dir/ohmyzsh/plugins/zsh-autosuggestions"
 repo_zsh_high="$repos_dir/ohmyzsh/plugins/zsh-syntax-highlighting"
+# repo_zsh_conda="$repos_dir/ohmyzsh/plugins/zsh-syntax-highlighting"
 
 # dir_or_execute "$repo_blog" "git clone git@github.com:combofish/combofish.github.io.git $repo_blog"
 # dir_or_execute "$repo_notes" "git clone git@github.com:combofish/carve-in-mind.git $repo_notes"
@@ -36,9 +29,8 @@ repo_zsh_high="$repos_dir/ohmyzsh/plugins/zsh-syntax-highlighting"
 # dir_or_execute "$repo_web_server" "git clone git@github.com:combofish/tiny-web-server.git $repo_web_server"
 
 
-dir_or_execute "$repo_zsh" "git clone git@github.com:ohmyzsh/ohmyzsh.git $repo_zsh"
-dir_or_execute "$repo_zsh_sugg" "git clone git@github.com:zsh-users/zsh-autosuggestions.git $repo_zsh_sugg"
-dir_or_execute "$repo_zsh_high" "git clone git@github.com:zsh-users/zsh-syntax-highlighting.git $repo_zsh_high"
+# dir_or_execute "$repo_zsh" "git clone https://github.com/ohmyzsh/ohmyzsh $repo_zsh"it
+dir_or_execute "$repo_zsh_sugg" "git clone https://github.com/zsh-users/zsh-autosuggestions $repo_zsh_sugg"
+dir_or_execute "$repo_zsh_high" "git clone https://github.com/zsh-users/zsh-syntax-highlighting $repo_zsh_high"
 
 set +x
-``

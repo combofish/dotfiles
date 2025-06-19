@@ -1,16 +1,9 @@
 #!/usr/bin/env python
-'''
-Author: larry combofish@163.com
-Date: 2023-06-24 15:53:57
-LastEditors: larry combofish@163.com
-LastEditTime: 2023-12-21 14:24:45
-FilePath: /dotfiles/startup.conf.d/link_config_files.py
-Description: 
-'''
 import os
 import os.path as osp
 import shutil
 import time
+
 
 def link_config_files(src_file, dst_file):
     assert osp.exists(src_file), f"{src_file} does not exist."

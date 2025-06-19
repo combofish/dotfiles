@@ -1,3 +1,5 @@
+
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -6,19 +8,7 @@
 # export ZSH=$HOME/.oh-my-zsh
 # export ZSH=$HOME/Documents/ohmyzsh
 export ZSH=$HOME/GitProjects/ohmyzsh
-
-arch=$(uname -m)
-if [[ "$arch" == "aarch64" || "$arch" == arm* ]]; then
-    # echo "System is ARM"
-    
-    # 仅在 ARM 且用户是 kas 时修改 ZSH 变量
-    if [[ $USER == "kas" ]]; then
-        export ZSH="/home/kas/kas_workspace/zhaoliming/GitProjects/ohmyzsh"
-    fi
-fi
-
-
-# [[ -f ~/.shrc ]] && . ~/.shrc
+[[ -f ~/.shrc ]] && . ~/.shrc
 
 alias cls='clear'
 alias ll='ls -l'
@@ -26,7 +16,7 @@ alias la='ls -a'
 alias vi='vim'
 alias javac="javac -J-Dfile.encoding=utf8"
 alias grep="grep --color=auto"
-# alias -s html=mate
+# alias -s html=mate 
 # alias -s rb=mate
 # alias -s py=vi
 # alias -s js=vi
@@ -53,21 +43,15 @@ promptinit
 # FILE ~/.zshrcEnabling cache for the completions for zsh
 zstyle ':completion::complete:*' use-cache 1
 
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-
 # ZSH_THEME="robbyrussell"
 # ZSH_THEME="gentoo"
-# ZSH_THEME="agnoster"
-
-# 判断用户设置环境变量
-if [[ $(whoami) == "root" ]]; then
-    ZSH_THEME="gentoo"
-else
-    ZSH_THEME="robbyrussell"
-fi
+# ZSH_THEME="spaceship"
+ZSH_THEME="agnoster"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -122,18 +106,53 @@ fi
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git
-    # autojump
-    zsh-autosuggestions
-    zsh-syntax-highlighting
-    golang
-    emacs)
+         # autojump
+         zsh-autosuggestions
+         zsh-syntax-highlighting
+         golang
+         emacs)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# ssh
+# export SSH_KEY_PATH="~/.ssh/rsa_id"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+#PATH="/home/larry/perl5/bin${PATH:+:${PATH}}"; export PATH;
+#PERL5LIB="/home/larry/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+#PERL_LOCAL_LIB_ROOT="/home/larry/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+#PERL_MB_OPT="--install_base \"/home/larry/perl5\""; export PERL_MB_OPT;
+#PERL_MM_OPT="INSTALL_BASE=/home/larry/perl5"; export PERL_MM_OPT;
+
+
 # >>> conda initialize >>>
-__conda_setup="$('/opt/miniforge3/bin/conda' 'shell.bash' 'hook' 2>/dev/null)"
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt/miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
@@ -144,26 +163,5 @@ else
     fi
 fi
 unset __conda_setup
+# <<< conda initialize <<<
 
-if [ -f ~/.shrc ]; then
-    source ~/.shrc
-fi
-
-
-
-arch=$(uname -m)
-if [[ "$arch" == "x86_64" ]]; then
-    # echo "System is x86_64"
-    export PATH=/opt/_internal/cpython-3.7.0/bin:/opt/conda/bin:/opt/miniforge3/bin:/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/mpich/bin
-    export LD_LIBRARY_PATH=/opt/_internal/cpython-3.7.0/lib:/usr/local/nvidia/lib:/usr/local/nvidia/lib64:/usr/local/mpich/lib
-
-    export PATH=$PATH:/home/kas/GitProjects/scripts/bin
-
-    
-elif [[ "$arch" == "aarch64" || "$arch" == "arm"* ]]; then
-    # echo "System is ARM"
-
-
-else
-    echo "Unknown architecture: $arch"
-fi
